@@ -13,7 +13,7 @@ import com.authservice.authservice.Domain.User;
 @SpringBootApplication
 public class AuthServiceApplication {
 
-    private static final Logger log = LoggerFactory.getLogger(AuthServiceApplication.class);
+  private static final Logger log = LoggerFactory.getLogger(AuthServiceApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(AuthServiceApplication.class, args);
@@ -22,8 +22,9 @@ public class AuthServiceApplication {
     @Bean
     public CommandLineRunner demo(UserRepository repository){
       return (args) ->{
-        repository.save(new User("Juan","123"));
+        repository.save(new User("Albert","123"));
       };
     }
+    
 
 }

@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: db 
+      POSTGRES_USER: root 
+      POSTGRES_PASSWORD: root 
+    networks:
+        - backend
+networks:
+  backend:
