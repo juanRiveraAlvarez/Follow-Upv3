@@ -12,20 +12,19 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController{
 
-  private Register registerService;
-  private ExistEmailExeption existEmailExeption;
+  private RegisterServiceImp registerService;
 
-  public UserController(Register registerService, ExistEmailExeption existEmailExeption){
+  public UserController(RegisterServiceImp registerService){
     this.registerService = registerService;
-    this.existEmailExeption = existEmailExeption;
   }
 
   @PostMapping(value="/save",produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<String> Register(@RequestBody User user){
-     if(registerService.RegisterUser(user)){
-       return ResponseEntity.ok("Creado con exito");
+  public ResponseEntity<AuthResponse> Register(@RequestBody RegisterRequest request){
+      AuthResponse authResponse = registerService.RegisterUser(request);
+     if(authResponse != null){
+       return ResponseEntity.ok(authResponse);
      }else{
-       return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(existEmailExeption.getMessage());
+       return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
      }
 
   }

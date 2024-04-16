@@ -77,11 +77,4 @@ public class AuthServiceApplication {
                     .build();
 
         }
-       /* @Bean
-        public CommandLineRunner demo(UserRepository repository){
-          return (args) ->{
-            repository.save(new User("Albert","123"));
-          };
-        }
-        */
   }   

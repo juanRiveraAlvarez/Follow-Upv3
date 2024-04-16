@@ -1,10 +1,13 @@
 package com.registerservice.registerservice.Domain;
 
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+@Repository
+public interface UserRepository extends CrudRepository<User,Long>{
+  User save(UserDetailsService user);
+  Boolean existsByEmail(String email);
 
-public interface UserRepository extends JpaRepository<User,Long>{
-  List<User> findAll();
-  boolean existsByEmail(String email);
+  User findByEmail(String email);
 }

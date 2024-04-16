@@ -1,7 +1,8 @@
 package com.registerservice.registerservice.Application;
 
-import com.registerservice.registerservice.Domain.User;
+import com.registerservice.registerservice.Infraestructure.AuthResponse;
+import com.registerservice.registerservice.Infraestructure.RegisterRequest;
 
 public interface RegisterService {
-    boolean RegisterUser(User user);
+    AuthResponse RegisterUser(RegisterRequest user);
 }
