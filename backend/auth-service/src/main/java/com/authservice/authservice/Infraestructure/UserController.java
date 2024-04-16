@@ -18,7 +18,7 @@ public class UserController{
     this.authServiceImp = authServiceImp;
   }
 
-  @PostMapping(value = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<AuthResponse> Login(@RequestBody LoginRequest request){
     if(authServiceImp.login(request) != null){
       return ResponseEntity.ok(authServiceImp.login(request));

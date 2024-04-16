@@ -5,13 +5,15 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class JwtServiceImp implements  JwtService{
-    private static final String SECRET_KEY = "Hola";
+    private static final String SECRET_KEY = "7/7FCsZ1ahjBUmvNDWSvxCQlHInzWvG/fSX0W5nD8xWs=";
     @Override
     public String getToken(UserDetails user){
         Map<String,Object> extraClaims= new HashMap<String,Object>();

@@ -25,6 +25,16 @@ public class User implements UserDetails {
     private String nick;
     private String email;
 
+    public User(){}
+
+    public User(Long id, String name, String password, String nick, String email) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.nick = nick;
+        this.email = email;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
