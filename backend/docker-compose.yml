@@ -1,7 +1,13 @@
 services:
-  postgres:
+  backend-follow-up:
+    build: ./demo/
+    ports:
+      - "8080:8080"
+    networks:
+        - pruebas-follow-up
+  db-follow-up:
     image: postgres:latest
-    container_name: db
+    container_name: pruebas-postgres-follow-up
     ports:
       - "5432:5432"
     environment:
@@ -9,6 +15,6 @@ services:
       POSTGRES_USER: root 
       POSTGRES_PASSWORD: root 
     networks:
-        - backend
+        - pruebas-follow-up
 networks:
-  backend:
+  pruebas-follow-up:
