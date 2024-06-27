@@ -11,20 +11,20 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @SpringBootApplication
 public class RegisterserviceApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(RegisterserviceApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(RegisterserviceApplication.class, args);
+  }
 
-        @Bean
-        public PasswordEncoder passwordEncoder(){
-          return new BCryptPasswordEncoder();
-        }
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 
-        @Bean 
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-              http
-            .csrf().disable() // Desactivar CSRF para la simplicidad del ejemplo
-            .authorizeRequests().anyRequest().permitAll();
-            return http.build();
-          }
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http
+        .csrf().disable() // Desactivar CSRF para la simplicidad del ejemplo
+        .authorizeRequests().anyRequest().permitAll();
+    return http.build();
+  }
 }

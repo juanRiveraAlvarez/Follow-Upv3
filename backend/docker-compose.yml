@@ -1,14 +1,10 @@
 services:
   postgres:
-    image: postgres:latest
-    container_name: db
+    image: postgres:17beta1-bullseye
+    container_name: produccion-follow-up
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: db 
-      POSTGRES_USER: root 
-      POSTGRES_PASSWORD: root 
-    networks:
-        - backend
-networks:
-  backend:
+      POSTGRES_DB: db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
