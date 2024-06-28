@@ -1,10 +1,4 @@
 services:
-  backend-follow-up:
-    build: ./demo/
-    ports:
-      - "8080:8080"
-    networks:
-        - pruebas-follow-up
   db-follow-up:
     image: postgres:latest
     container_name: pruebas-postgres-follow-up
